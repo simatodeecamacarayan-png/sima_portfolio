@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #ffd6e8, #ffc0d9, #ffb6d5);
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+/* ✅ NAVBAR */
+.navbar {
+  background: rgba(255, 182, 213, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #ff1683;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #ff1683;
+}
+
+/* ✅ HERO */
+.hero {
+  min-height: 100vh;
+  padding-top: 140px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: #ff1683;
+}
+
+.hero-text {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+/* ✅ BUTTONS */
+.btn-pink {
+  background: #ff1683;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(255, 22, 131, 0.4);
+  transition: 0.3s;
+}
+
+.btn-pink:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ff1683;
+}
+
+.btn-outline-pink {
+  border: 2px solid #ff1683;
+  color: #ff1683;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-outline-pink:hover {
+  background: #ff1683;
+  color: white;
+}
+
+/* ✅ IMAGE */
+.hero-photo {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255, 22, 131, 0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* ✅ SECTION */
+.section {
+  padding: 100px 20px;
+}
+
+/* ✅ CARDS */
+.girl-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.girl-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #ff1683;
+}
+
+/* ✅ CUTE BACKGROUND HEARTS */
+.hearts-bg::before {
+  content: "💖 💕 💗 💓 💞";
+  position: fixed;
+  font-size: 2rem;
+  opacity: 0.15;
+  animation: hearts 12s infinite linear;
+}
+
+@keyframes hearts {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ✅ MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-photo {
+    width: 240px;
+    height: 320px;
+    margin-top: 20px;
+  }
+
+  .btn-pink,
+  .btn-outline-pink {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 10px auto;
+  }
+
+}
+
+.gallery-img:hover {
+  animation: tada 0.8s;
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255,150,180,0.3);
+}

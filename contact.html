@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Sima</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Fullscreen Vanta Waves */
+    #waves-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -2;
+    }
+
+    /* Floating hearts overlay */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(-45deg);
+      animation: floatDown linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { top: 0; left: 10px; }
+
+    @keyframes floatDown {
+      0% { transform: translateY(-50px) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(120vh) rotate(-45deg); opacity: 0; }
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      padding-top: 80px;
+      background: #fff;
+      color: #222;
+    }
+
+    /* Social icons styling */
+    .social-icons {
+      margin-top: 30px;
+    }
+    .social-icons a {
+      color: #ff69b4; /* Pink color */
+      font-size: 1.5rem;
+      margin: 0 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #ff1493;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Vanta Waves Background -->
+<div id="waves-bg"></div>
+
+<!-- Floating Hearts Overlay -->
+<script>
+  const numHearts = 30;
+  for (let i = 0; i < numHearts; i++) {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+    const size = 10 + Math.random() * 20;
+    heart.style.width = heart.style.height = size + 'px';
+    document.body.appendChild(heart);
+  }
+</script>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top px-4">
+  <a class="navbar-brand fw-bold" href="index.html">SIMA</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="menu">
+    <ul class="navbar-nav gap-3">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="about.html">About</a></li>
+      <li><a class="nav-link" href="photos.html">Photos</a></li>
+      <li><a class="nav-link active" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- CONTACT FORM -->
+<section class="section container text-center">
+  <h1 data-aos="fade-down">Book Me</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6" data-aos="zoom-in">
+      <input type="text" class="form-control mb-3" placeholder="Your Name">
+      <input type="email" class="form-control mb-3" placeholder="Your Email">
+      <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+
+      <button class="btn-pink w-100">Send Booking Request</button>
+
+      <!-- SOCIAL ICONS -->
+      <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+<script>
+  AOS.init({ duration: 800, once: true });
+
+  VANTA.WAVES({
+    el: "#waves-bg",
+    color: 0xffb6c1,
+    shininess: 50,
+    waveHeight: 20,
+    waveSpeed: 1.0,
+    zoom: 1.0
+  });
+</script>
+
+</body>
+</html>
